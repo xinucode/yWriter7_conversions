@@ -38,7 +38,7 @@ class spacejock_html_to_latex:
         yamlfile.close()
         
         self.story_contents = sp.story_parser( self.html_filename )
-        self.story_contents.story_preview()
+        # self.story_contents.story_preview()
         
     @property
     def html_filename(self):
@@ -46,7 +46,15 @@ class spacejock_html_to_latex:
         
     @property
     def tex_filename(self):
-        return os.path.join(self.DirectoryName,self.file_stub) #+".tex")
+        return os.path.join(self.DirectoryName,self.file_stub)
+        
+    @property
+    def tex_filename_full(self):
+        return os.path.join(self.DirectoryName,self.file_stub+".tex")
+        
+    @property
+    def class_dependencies(self):
+        return os.path.join(self.DirectoryName,"diazessay.cls"),os.path.join(self.DirectoryName,"unnumberedtotoc.sty")
         
     def generate_latex(self):
     
@@ -99,4 +107,5 @@ class spacejock_html_to_latex:
         
 if __name__=="__main__":
     this_proj = spacejock_html_to_latex("project_config.yml","author_config.yml")
+    this_proj.story_contents.story_preview()
     this_proj.generate_latex()

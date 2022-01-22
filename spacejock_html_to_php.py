@@ -40,19 +40,32 @@ class spacejock_html_to_php:
         else:
             self.cover_image = project_info['cover_image_filename']
         yamlfile.close()
-
+        
         #create story object
         self.story_contents = sp.story_parser( self.html_filename )
-        self.story_contents.story_preview()
+        
+        self.total_pages_by_scene = 0
+        for chap in self.story_contents.chapters.keys():
+            self.total_pages_by_scene=self.total_pages_by_scene+len(self.story_contents.chapters[chap])
         
     @property
     def html_filename(self):
         return os.path.join(self.BookDirectoryName,self.file_stub+".html")
         
+    def php_filenames(self,index):
+        return os.path.join(self.SiteDirectoryName,self.file_stub+"_p"+str(index)+".php")
+        
+    @property
+    def dependencies(self):
+        return os.path.join(self.SiteDirectoryName,"light_white_blue_red.png"),os.path.join(self.SiteDirectoryName,"dark_black_blue_red.png")
+        
     def copy_over_dependencies(self):
         if self.image:
             image_path = os.path.join(self.BookDirectoryName,self.image)
-            if os.path.isfile(image_path):
+            image_future_path = os.path.join(self.SiteDirectoryName,self.image)
+            if image_path==image_future_path:
+                pass
+            elif os.path.isfile(image_path):
                 shutil.copy( image_path, self.SiteDirectoryName )
             else:
                 print("Cannot find image file:",image_path)
@@ -77,19 +90,20 @@ class spacejock_html_to_php:
             "total_pages":total_page_indicator,"this_page_no":this_page_num_indicator,"subtitle_tag":'<h2 class="title"><b>##title##</b></h2>', \
             "title":title_indicator}
         
-        total_pages = 0
-        for chap in self.story_contents.chapters.keys():
-            total_pages=total_pages+len(self.story_contents.chapters[chap])
+        # total_pages = 0
+        # for chap in self.story_contents.chapters.keys():
+            # total_pages=total_pages+len(self.story_contents.chapters[chap])
         
         for chap in self.story_contents.chapters.keys():
             for scene in self.story_contents.chapters[chap]:
             
-                phpfile = open( self.SiteDirectoryName+"\\"+self.file_stub+"_p"+str(page_num)+".php" , "w+" )
+                # phpfile = open( self.SiteDirectoryName+"\\"+self.file_stub+"_p"+str(page_num)+".php" , "w+" )
+                phpfile = open( self.php_filenames(page_num) , "w+" )
                     #set up links
                 replacements = { "image_tag":'<img src="##image##" alt="##title##" class="cover-image">', "image":self.image, \
                     "title_tag":'<h1 class="title"><b>##title##</b></h1>', "next_link":self.file_stub+"_p"+str(page_num+1)+".php", "prev_link":"", \
                     "chap_tag":"<p class='chapter'><b>Chapter "+str(page_num+1)+": "+chap+"</b></p>", "cover_image":'div class="cover-image">', \
-                    "this_page":self.file_stub+"_p"+str(page_num)+".php", "total_pages":str(total_pages+1),"this_page_no":str(page_num+1), \
+                    "this_page":self.file_stub+"_p"+str(page_num)+".php", "total_pages":str(self.total_pages_by_scene+1),"this_page_no":str(page_num+1), \
                     "subtitle_tag":'<h2 class="title"><b>##title##</b></h2>', "title":self.print_title}
                 if self.image is None:
                     replacements["image_tag"] = ""
@@ -149,8 +163,8 @@ class spacejock_html_to_php:
         #indicators = [image_indicator, title_indicator, next_page_indicator, prev_page_indicator, "<p class='chapter'><b>Chapter 1</b></p>", 'div class="cover-image">', this_page_indicator]
         replacements = { "image_tag":'<img src="##image##" alt="##title##" class="cover-image">', "image":self.image, \
             "title_tag":'<h1 class="title"><b>##title##</b></h1>', "next_link":"", "prev_link":self.file_stub+"_p"+str(page_num-1)+".php", \
-            "chap_tag":"", "cover_image":'div class="final-image">',  "this_page":self.file_stub+"_p"+str(page_num)+".php", "total_pages":str(total_pages+1), \
-            "this_page_no":str(total_pages+1), "subtitle_tag":"", "title":"Thanks for reading "+self.print_title+"!"}
+            "chap_tag":"", "cover_image":'div class="final-image">',  "this_page":self.file_stub+"_p"+str(page_num)+".php", "total_pages":str(self.total_pages_by_scene+1), \
+            "this_page_no":str(self.total_pages_by_scene+1), "subtitle_tag":"", "title":"Thanks for reading "+self.print_title+"!"}
         if self.image is None:
             replacements["image_tag"] = ""
             replacements["image"] = ""
@@ -185,4 +199,5 @@ class spacejock_html_to_php:
         
 if __name__=="__main__":
     this_proj = spacejock_html_to_php("project_config.yml")
+    this_proj.story_contents.story_preview()
     this_proj.generate_php_by_scene() 

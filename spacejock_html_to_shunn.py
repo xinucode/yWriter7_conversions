@@ -49,7 +49,7 @@ class spacejock_html_to_shunn:
         yamlfile.close()
         
         self.story_contents = sp.story_parser( self.html_filename )
-        self.story_contents.story_preview()
+        # self.story_contents.story_preview()
         
     @property
     def html_filename(self):
@@ -57,7 +57,7 @@ class spacejock_html_to_shunn:
         
     @property
     def rtf_filename(self):
-        return os.path.join(self.infiledir,self.file_stub+"_skinner.rtf")
+        return os.path.join(self.infiledir,self.file_stub+"_"+self.author_surname+".rtf")
         
     def generate_shunn(self):
         if self.book_type=="novel":
@@ -134,10 +134,11 @@ class spacejock_html_to_shunn:
         shunnfile.write(doc_footer)
         shunnfile.close()
         
-        print("A friendly reminder that this is a terrible rtf file. To produce a good document compatible",
+        print("A FRIENDLY REMINDER: the rtf file produced here is sketchy. To produce a good document compatible",
                 "across all Word versions, you need to open the file in Word, go to File>Info>Campatability,",
                 "and convert the resulting document.")
         
 if __name__=="__main__":
     this_proj = spacejock_html_to_shunn("project_config.yml","author_config.yml")
+    this_proj.story_contents.story_preview()
     this_proj.generate_shunn()
