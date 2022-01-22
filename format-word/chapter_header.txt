@@ -1,0 +1,19 @@
+{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid11488049 \page }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid6702782 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par }\pard\plain \ltrpar\s23\qc \li0\ri0\sl-480\slmult0\nowidctlpar\noline
+\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\wrapdefault\hyphpar0\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid4736421\contextualspace \rtlch\fcs1 \af0\afs20\alang1025 \ltrch\fcs0 
+\f2\fs24\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid4736421 Chapter #}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid1255141 
+\par }\pard\plain \ltrpar\s22\qc \li0\ri0\sa480\sl-480\slmult0\nowidctlpar\noline\wrapdefault\hyphpar0\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid4736421\contextualspace \rtlch\fcs1 \af0\afs20\alang1025 \ltrch\fcs0 
+\f2\fs24\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid4736421 Chapter Title}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid4736421\charrsid4736421 
+\par }\pard\plain \ltrpar\s15\ql \fi720\li0\ri0\sl-480\slmult0\nowidctlpar\noline
+\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\wrapdefault\hyphpar0\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid15030398\contextualspace \rtlch\fcs1 \af0\afs20\alang1025 \ltrch\fcs0 
+\f2\fs24\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 
