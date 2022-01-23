@@ -84,9 +84,7 @@ Example project config file:
 title: Lorem Ipsum
 file_stub: Lorem
 project_directory: example\
-cover_image_filename: Cosmic-Microwave-Background-Radiation.jpg
 image_filename: pexels-ann-zzz-8452844.jpg
-edit_mode: False
 title_keyword: Lorem
 chapter_titles: None
 word_count: "1,000"

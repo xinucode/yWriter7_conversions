@@ -25,28 +25,36 @@ center_command = "\\pard \\ltrpar\\s15\\qc \\fi720\\li0\\ri0\\sl-480\\slmult0\\n
 
 class spacejock_html_to_shunn:
     def __init__(self,proj_file,auth_file):
-        yamlfile = open(auth_file,"r")
-        author_info = yaml.load(yamlfile, Loader=yaml.FullLoader)
-        self.author = author_info["author"]
-        self.street_address = author_info["street_address"]
-        self.postal_code = author_info["postal_code"]
-        self.email = author_info["email"]
-        self.author_surname = author_info["author_surname"]
-        yamlfile.close()
+        try:
+            yamlfile = open(auth_file,"r")
+            author_info = yaml.load(yamlfile, Loader=yaml.FullLoader)
+            self.author = author_info["author"]
+            self.street_address = author_info["street_address"]
+            self.postal_code = author_info["postal_code"]
+            self.email = author_info["email"]
+            self.author_surname = author_info["author_surname"]
+        except KeyError as err:
+            print("ERROR: missing key",err, "in", auth_file, "in shunn converter")
+        finally:
+            yamlfile.close()
 
-        yamlfile = open(proj_file,"r")
-        project_info = yaml.load(yamlfile, Loader=yaml.FullLoader)
-        self.infiledir = project_info['project_directory']
-        self.file_stub = project_info['file_stub']
-        self.title = project_info['title']
-        if project_info['chapter_titles'] == 'None':
-            self.chapters = False
-        else:
-            self.chapters = True
-        self.word_count = project_info['word_count']
-        self.book_type = project_info['book_type']
-        self.title_keyword = project_info['title_keyword']
-        yamlfile.close()
+        try:
+            yamlfile = open(proj_file,"r")
+            project_info = yaml.load(yamlfile, Loader=yaml.FullLoader)
+            self.infiledir = project_info['project_directory']
+            self.file_stub = project_info['file_stub']
+            self.title = project_info['title']
+            if project_info['chapter_titles'] == 'None':
+                self.chapters = False
+            else:
+                self.chapters = True
+            self.word_count = project_info['word_count']
+            self.book_type = project_info['book_type']
+            self.title_keyword = project_info['title_keyword']
+        except KeyError as err:
+            print("ERROR: missing key",err, "in", proj_file, "in shunn converter")
+        finally:
+            yamlfile.close()
         
         self.story_contents = sp.story_parser( self.html_filename )
         # self.story_contents.story_preview()

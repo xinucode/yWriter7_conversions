@@ -36,6 +36,7 @@ if parser.parse_args().shunn or parser.parse_args().all:
             shunn_output.story_contents.story_preview()
             previewed = True
         shunn_output.generate_shunn()
+        print("SUCCESS: shunn formatting complete")
     except:
         print("ERROR: Something went wrong with Shunn output")
     
@@ -46,6 +47,7 @@ if parser.parse_args().tex or parser.parse_args().all:
             latex_output.story_contents.story_preview()
             previewed = True
         latex_output.generate_latex()
+        print("SUCCESS: latex formatting complete")
     except:
         print("ERROR: Something went wrong with latex output")
     
@@ -56,6 +58,7 @@ if parser.parse_args().php or parser.parse_args().all:
             php_output.story_contents.story_preview()
             previewed = True
         php_output.generate_php_by_scene() 
+        print("SUCCESS: php formatting complete")
     except:
         print("ERROR: Something went wrong with php output")
  
@@ -65,6 +68,7 @@ if parser.parse_args().clean:
         shunn_output = rtf.spacejock_html_to_shunn(project_config_file,author_config_file)
         if os.path.isfile(shunn_output.rtf_filename):
             os.remove(shunn_output.rtf_filename)
+        print("SUCCESS: shunn cleanup complete")
     except:
         print("ERROR: Something went wrong with removing rtf file")
         
@@ -76,6 +80,7 @@ if parser.parse_args().clean:
         for item in latex_output.class_dependencies:
             if os.path.isfile(item):
                 os.remove(item)
+        print("SUCCESS: latex cleanup complete")
     except:
         print("ERROR: Something went wrong with removing latex file and dependencies")
         
@@ -88,6 +93,7 @@ if parser.parse_args().clean:
         for item in php_output.dependencies:
             if os.path.isfile(item):
                 os.remove(item)
+        print("SUCCESS: php cleanup complete")
     except:
         print("ERROR: Something went wrong with removing php files and dependencies")
         

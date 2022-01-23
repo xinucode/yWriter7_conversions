@@ -13,29 +13,33 @@ class_loc2 = "reviseme_format\\unnumberedtotoc.sty"
 
 class spacejock_html_to_latex:
     def __init__(self,proj_file,auth_file):
-        yamlfile = open(auth_file,"r")
-        author_info = yaml.load(yamlfile, Loader=yaml.FullLoader)
-        self.author = author_info["author"]
-        self.street_address = author_info["street_address"]
-        self.postal_code = author_info["postal_code"]
-        self.email = author_info["email"]
-        self.author_surname = author_info["author_surname"]
-        yamlfile.close()
-
-        yamlfile = open(proj_file,"r")
-        project_info = yaml.load(yamlfile, Loader=yaml.FullLoader)
-        self.DirectoryName = project_info['project_directory']
-        self.file_stub = project_info['file_stub']
-        self.title = project_info['title']
-        if project_info['chapter_titles'] == 'None':
-            self.chapters = False
-        else:
-            self.chapters = True
-        if project_info['image_filename'] == 'None':
-            self.image = None
-        else:
-            self.image = project_info['image_filename']
-        yamlfile.close()
+        try:
+            yamlfile = open(auth_file,"r")
+            author_info = yaml.load(yamlfile, Loader=yaml.FullLoader)
+            self.author = author_info["author"]
+        except KeyError as err:
+            print("ERROR: missing key",err, "in", auth_file, "in latex converter")
+        finally:
+            yamlfile.close()
+        
+        try:
+            yamlfile = open(proj_file,"r")
+            project_info = yaml.load(yamlfile, Loader=yaml.FullLoader)
+            self.DirectoryName = project_info['project_directory']
+            self.file_stub = project_info['file_stub']
+            self.title = project_info['title']
+            if project_info['chapter_titles'] == 'None':
+                self.chapters = False
+            else:
+                self.chapters = True
+            if project_info['image_filename'] == 'None':
+                self.image = None
+            else:
+                self.image = project_info['image_filename']
+        except KeyError as err:
+            print("ERROR: missing key",err, "in", proj_file, "in latex converter")
+        finally:
+            yamlfile.close()
         
         self.story_contents = sp.story_parser( self.html_filename )
         # self.story_contents.story_preview()

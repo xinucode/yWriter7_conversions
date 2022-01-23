@@ -20,26 +20,26 @@ reference_indicator = "##para_ref##"
 
 class spacejock_html_to_php:
     def __init__(self,infile):
-        #retrieve info from config file
-        yamlfile = open(infile,"r")
-        project_info = yaml.load(yamlfile, Loader=yaml.FullLoader)
-        self.BookDirectoryName = project_info['project_directory']
-        self.SiteDirectoryName = project_info['outfile_directory']
-        self.file_stub = project_info['file_stub']
-        self.print_title = project_info['title']
-        if project_info['image_filename'] == 'None':
-            self.image = None
-        else:
-            self.image = project_info['image_filename']
-        if project_info['chapter_titles'] == 'None':
-            self.chapters = False
-        else:
-            self.chapters = True
-        if project_info['cover_image_filename'] == 'None':
-            self.cover_image = None
-        else:
-            self.cover_image = project_info['cover_image_filename']
-        yamlfile.close()
+        try:
+            #retrieve info from config file
+            yamlfile = open(infile,"r")
+            project_info = yaml.load(yamlfile, Loader=yaml.FullLoader)
+            self.BookDirectoryName = project_info['project_directory']
+            self.SiteDirectoryName = project_info['outfile_directory']
+            self.file_stub = project_info['file_stub']
+            self.print_title = project_info['title']
+            if project_info['image_filename'] == 'None':
+                self.image = None
+            else:
+                self.image = project_info['image_filename']
+            if project_info['chapter_titles'] == 'None':
+                self.chapters = False
+            else:
+                self.chapters = True
+        except KeyError as err:
+            print("ERROR: missing key",err, "in", proj_file, "in php converter")
+        finally:
+            yamlfile.close()
         
         #create story object
         self.story_contents = sp.story_parser( self.html_filename )
