@@ -255,6 +255,12 @@ if( $next_page!=="" ){
 		color: <?php echo $font_color;?>;
 		margin-top:1em;
 	}
+	h3.title {
+		text-align: center;
+		color:<?php echo $font_color;?>;
+		margin-top:1em;
+		font-size:<?php echo $font_size*6.0;?>px;
+	}
 	p.centered
 	{
 		text-indent: 0.2em;
@@ -328,6 +334,7 @@ if( $next_page!=="" ){
 </div>
 <h1 class="title"><b>##title##</b></h1>
 <h2 class="title"><b>##title##</b></h2>
+<h3 class="title"><b>Page ##this_page_number##</b></h3>
 <div class="noselect">
 <font name='arial' size="<?php echo $font_size;?>px">
 

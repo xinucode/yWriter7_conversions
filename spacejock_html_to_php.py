@@ -32,7 +32,7 @@ class spacejock_html_to_php:
                 self.image = None
             else:
                 self.image = project_info['image_filename']
-            if project_info['chapter_titles'] == 'None':
+            if project_info['chapter_titles'] == 'None' or project_info['chapter_titles'] == 'False' or project_info['chapter_titles'] == False:
                 self.chapters = False
             else:
                 self.chapters = True
@@ -102,7 +102,7 @@ class spacejock_html_to_php:
                     #set up links
                 replacements = { "image_tag":'<img src="##image##" alt="##title##" class="cover-image">', "image":self.image, \
                     "title_tag":'<h1 class="title"><b>##title##</b></h1>', "next_link":self.file_stub+"_p"+str(page_num+1)+".php", "prev_link":"", \
-                    "chap_tag":"<p class='chapter'><b>Chapter "+str(page_num+1)+": "+chap+"</b></p>", "cover_image":'div class="cover-image">', \
+                    "chap_tag":"<p class='chapter'><b>Chapter: "+chap+"</b></p>", "cover_image":'div class="cover-image">', \
                     "this_page":self.file_stub+"_p"+str(page_num)+".php", "total_pages":str(self.total_pages_by_scene+1),"this_page_no":str(page_num+1), \
                     "subtitle_tag":'<h2 class="title"><b>##title##</b></h2>', "title":self.print_title}
                 if self.image is None:
@@ -116,7 +116,7 @@ class spacejock_html_to_php:
                     replacements["prev_link"] = self.file_stub+"_p"+str(page_num-1)+".php"
                     #+f" page {page_num}"
                     replacements["title_tag"] = ""
-                    replacements["title"]+=f" page {page_num+1}"
+                    # replacements["chap_tag"]+=f" Page {page_num+1}"
                     replacements["image_tag"] = ""
                     replacements["image"] = ""
                 else:

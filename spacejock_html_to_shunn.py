@@ -44,12 +44,14 @@ class spacejock_html_to_shunn:
             self.infiledir = project_info['project_directory']
             self.file_stub = project_info['file_stub']
             self.title = project_info['title']
-            if project_info['chapter_titles'] == 'None':
+            if project_info['chapter_titles'] == 'None' or project_info['chapter_titles'] == 'False' or project_info['chapter_titles'] == False:
                 self.chapters = False
             else:
                 self.chapters = True
-            self.word_count = project_info['word_count']
+            self.word_count = str(project_info['word_count'])
             self.book_type = project_info['book_type']
+            if self.book_type!="short" and self.book_type!="novel":
+                self.book_type="short"
             self.title_keyword = project_info['title_keyword']
         except KeyError as err:
             print("ERROR: missing key",err, "in", proj_file, "in shunn converter")

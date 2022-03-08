@@ -13,6 +13,7 @@ parser.add_argument('--tex', action='store_true', help="converts given project i
 parser.add_argument('--php', action='store_true', help="converts given project into a set of php reader files")
 parser.add_argument('--all', action='store_true', help="runs all conversions")
 parser.add_argument('-c','--clean', action='store_true', help="deletes all files produced by this program for this project")
+parser.add_argument('-q','--quiet', action='store_true', help="reduces amount of output")
 
 #check inputs
 if not parser.parse_args().author:
@@ -28,7 +29,7 @@ else:
     project_config_file = parser.parse_args().project
     
 #run conversion(s)
-previewed = False
+previewed = parser.parse_args().quiet
 if parser.parse_args().shunn or parser.parse_args().all:
     try:
         shunn_output = rtf.spacejock_html_to_shunn(project_config_file,author_config_file)

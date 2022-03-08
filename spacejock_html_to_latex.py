@@ -28,7 +28,7 @@ class spacejock_html_to_latex:
             self.DirectoryName = project_info['project_directory']
             self.file_stub = project_info['file_stub']
             self.title = project_info['title']
-            if project_info['chapter_titles'] == 'None':
+            if project_info['chapter_titles'] == 'None' or project_info['chapter_titles'] == 'False' or project_info['chapter_titles'] == False:
                 self.chapters = False
             else:
                 self.chapters = True
