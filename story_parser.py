@@ -43,6 +43,8 @@ def clean_up_line_latex( line):
   line = line.replace( "&#211;", "$\\acute{\\textup{O}}$")
   line = line.replace( "&mdash;", "---")
   line = line.replace( "&#8212;", "---")
+  line = line.replace( "&gt;", ">")
+  line = line.replace( "&#239;", "$\\ddot{\\textup{\\i}}$")
   return line
     
 class story_text:
@@ -173,6 +175,8 @@ class story_paragraph:
         out_text = out_text.replace( "&mdash;", "—")
         out_text = out_text.replace( "&#8212;", "—")
         out_text = out_text.replace("&hellip;", "…")
+        out_text = out_text.replace( "&gt;", ">")
+        out_text = out_text.replace( "&#239;", "ï")
         
         out_text = remove_front_spaces(out_text)
         out_text = remove_rear_spaces(out_text)
@@ -194,6 +198,9 @@ class story_paragraph:
             else:
                 out_text = out_text+text.text
                 
+        if "[" in out_text and "]" in out_text:
+            out_text = out_text.replace( "[", "\\sethlcolor{red}\\hl{[")
+            out_text = out_text.replace( "]", "]}" )
         return clean_up_line_latex(out_text)+"\n"
 
 class story_parser:

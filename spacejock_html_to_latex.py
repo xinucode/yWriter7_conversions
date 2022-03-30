@@ -62,11 +62,15 @@ class spacejock_html_to_latex:
         
     def generate_latex(self):
     
-        if os.path.isfile(class_loc):
-            shutil.copy( class_loc, self.DirectoryName )
-            shutil.copy( class_loc2, self.DirectoryName )
-        else:
-            print( "Class file chosen is not there" )
+        transfer_files = [class_loc, class_loc2]
+        destination_files = self.class_dependencies
+        for file,dest in zip(transfer_files,destination_files):
+            if not os.path.isfile(file):
+                print(f"Cannot find class file {file}")
+            elif os.path.isfile(dest):
+                print(f"Class file already exists: {dest}")
+            else:
+                shutil.copy( file, self.DirectoryName )
     
         doc = pylatex.Document(documentclass="diazessay",document_options="12")
 

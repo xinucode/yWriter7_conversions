@@ -63,22 +63,21 @@ class spacejock_html_to_php:
         if self.image:
             image_path = os.path.join(self.BookDirectoryName,self.image)
             image_future_path = os.path.join(self.SiteDirectoryName,self.image)
-            if image_path==image_future_path:
-                pass
+            if os.path.isfile(image_future_path):
+                print(f"Image already exists in destination.")
             elif os.path.isfile(image_path):
                 shutil.copy( image_path, self.SiteDirectoryName )
             else:
                 print("Cannot find image file:",image_path)
                 
-        if os.path.isfile("light_white_blue_red.png"):
-            shutil.copy( "light_white_blue_red.png", self.SiteDirectoryName )
-        else:
-            print("Cannot find file: light_white_blue_red.png")
-            
-        if os.path.isfile("dark_black_blue_red.png"):
-            shutil.copy( "dark_black_blue_red.png", self.SiteDirectoryName )
-        else:
-            print("Cannot find file: dark_black_blue_red.png")
+        files_to_copy = ["light_white_blue_red.png","dark_black_blue_red.png"]
+        for file in files_to_copy:
+            if os.path.isfile(file) and not os.path.isfile(os.path.join(self.SiteDirectoryName,file)):
+                shutil.copy(file,self.SiteDirectoryName)
+            elif not os.path.isfile(file):
+                print(f"Cannot find file: {file}")
+            elif os.path.isfile(os.path.join(self.SiteDirectoryName,file)):
+                print(f"File {file} already exists in destination.")
         
     def generate_php_by_scene(self):
         self.copy_over_dependencies()
@@ -137,7 +136,7 @@ class spacejock_html_to_php:
                 header.close()
                 
                 for i,para in enumerate(scene):
-                    phpfile.write( paragraph_indicators[0].replace(reference_indicator,'para'+str(i))+para.paragraph_to_html()+paragraph_indicators[1])
+                    phpfile.write( paragraph_indicators[0]+para.paragraph_to_html()+paragraph_indicators[1])
                 
                 phpfile.write("</font>\n")
                 
@@ -182,7 +181,8 @@ class spacejock_html_to_php:
         header.close()
 
         phpfile.write("</font>\n")
-
+        
+        
         #insert footer onto page
         footer = open( "footer.php", "r")
         line = "k"
