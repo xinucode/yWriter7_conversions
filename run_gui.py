@@ -95,40 +95,38 @@ def save_to_yml(tit,stub,proD,imag,titkey,chaptit,count,stype,pout,folder = 'con
         command_output = ttk.Label(errgui, text=error_message,wraplength=450)
         command_output.grid(column=0,row=0,**options)
     else:
-        yml_items = [f'title: "{tit}"',f'file_stub: "{stub}"',f'project_directory: {proD}']
+        yml_items = {'title': tit, 'file_stub': stub,'project_directory': proD}
         if not imag:
-            yml_items.append('image_filename: None')
+            yml_items['image_filename'] = None
         else:
-            yml_items.append(f'image_filename: "{imag}"')
+            yml_items['image_filename'] = imag
         if not stype:
-            yml_items.append('book_type: False')
+            yml_items['book_type'] = False
         else:
-            yml_items.append(f'book_type: "{stype}"')
+            yml_items['book_type'] = stype
         if not chaptit:
-            yml_items.append('chapter_titles: False')
+            yml_items['chapter_titles'] = False
         else:
-            yml_items.append('chapter_titles: True')
+            yml_items['chapter_titles'] = True
         if not count:
-            yml_items.append('word_count: "0"')
+            yml_items['word_count'] = "0"
         else:
-            yml_items.append(f'word_count: "{count}"')
+            yml_items['word_count'] = f'{count}'
         if not titkey:
-            yml_items.append('title_keyword: False')
+            yml_items['title_keyword'] = False
         else:
-            yml_items.append(f'title_keyword: "{titkey}"')
+            yml_items['title_keyword'] = titkey
         if not pout:
-            yml_items.append(f'outfile_directory: {proD}')
+            yml_items['outfile_directory'] = proD
         else:
-            yml_items.append(f'outfile_directory: {pout}')
-        
-        output = "\n".join(yml_items)
+            yml_items['outfile_directory'] = pout
         
         if not os.path.isdir(folder):
             os.mkdir(folder)
-        yml_output = yaml.load(output, Loader=yaml.FullLoader)
+            
         proj_path = os.path.join(folder,stub+".yml")
         with open( proj_path,'w+') as file:
-            yaml.dump(yml_output, file)
+            yaml.dump(yml_items, file)
             
             if not run_conv:
                 succgui = tk.Tk()
