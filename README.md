@@ -213,3 +213,11 @@ or
 ```
 	python run_conversions.py --php
 ```
+
+## Recompile
+
+The software used to generate the executable was ```pyinstaller```. To recompile the executable after a change to the code (test the code using ```python run_gui.py```), run the command
+
+```
+pyinstaller --clean --onefile -w --icon=".\MeLogo3-purple-circle2.ico" --distpath=".\" --name="SpaceJock Conversions" .\run_gui.py
+```
