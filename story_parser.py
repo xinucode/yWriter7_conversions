@@ -34,6 +34,8 @@ def clean_up_line_latex( line):
   line = line.replace("&hellip;", "...")
   line = line.replace( "&#8220;", '"')
   line = line.replace( "&#8221;", '"')
+  line = line.replace( "&#8217; ", "\\textquotesingle \ ")
+  line = line.replace( "&#8216; ", "\\textquotesingle \ ")
   line = line.replace( "&#8217;", "\\textquotesingle ")
   line = line.replace( "&#8216;", "\\textquotesingle ")
   line = line.replace( "&#8230;", "...")
