@@ -71,9 +71,10 @@ class spacejock_html_to_shunn:
         
     def generate_shunn(self):
         if self.book_type=="novel":
-            header_files = ["format-word\\doc_header.txt","format-word\\doc_footer.txt","format-word\\chapter_header.txt","format-word\\para_header.txt","format-word\\para_footer.txt"]
+                            #times new roman rtf header (original was courier new; As a coder, a style that I like, but aparently not for everyone. Especially publishers)
+            header_files = ["format-word\\doc_header_TNR.txt","format-word\\doc_footer.txt","format-word\\chapter_header.txt","format-word\\para_header.txt","format-word\\para_footer.txt"]
         else:
-            header_files = ["format-word\\doc_header2.txt","format-word\\doc_footer2.txt","","format-word\\para_header2.txt","format-word\\para_footer.txt"]
+            header_files = ["format-word\\doc_header2_TNR.txt","format-word\\doc_footer2.txt","","format-word\\para_header2.txt","format-word\\para_footer.txt"]
 
         f0 = open( header_files[0], "r" )
         f2 = open( header_files[1], "r" )
