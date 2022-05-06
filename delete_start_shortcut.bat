@@ -1,0 +1,1 @@
+del "%AppData%\Microsoft\Windows\Start Menu\Programs\yWriter7 Conversions.lnk"

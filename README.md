@@ -1,4 +1,4 @@
-# spacejock_conversions
+# yWriter7_conversions
 Converts output html files into php, latex, and rtf outputs. 
 
 These scripts take the html file produced by SpaceJock's yWriter7 output html file and converts it to several formats of my preference and needs. 
@@ -90,7 +90,7 @@ If none are specified the local config files will be ran (they are preset with t
 Click or activate the ececutable 
 
 ```
-SpaceJock Conversions.exe
+yWriter7 Conversions.exe
 ```
 
 #### Any:
@@ -219,5 +219,5 @@ or
 The software used to generate the executable was ```pyinstaller```. To recompile the executable after a change to the code (test the code using ```python run_gui.py```), run the command
 
 ```
-pyinstaller --clean --onefile -w --icon=".\MeLogo3-purple-circle2.ico" --distpath=".\" --name="SpaceJock Conversions" .\run_gui.py
+pyinstaller --clean --onefile -w --icon=".\MeLogo3-purple-circle2.ico" --distpath=".\" --name="yWriter7 Conversions" .\run_gui.py
 ```

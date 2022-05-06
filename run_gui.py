@@ -9,7 +9,7 @@ options = {'padx': 3, 'pady': 4}
 title_options = {'padx': 5, 'pady': 7}
 entry_width = 40
 gui = tk.Tk()
-gui.title('SpaceJock yWriter7 Conversions')
+gui.title('yWriter7 Conversions')
 gui.geometry('600x650')
 gui.iconbitmap('MeLogo3-purple-circle2.ico')
 
