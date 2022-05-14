@@ -145,9 +145,7 @@ class spacejock_html_to_shunn:
         shunnfile.write(doc_footer)
         shunnfile.close()
         
-        print("A FRIENDLY REMINDER: the rtf file produced here is sketchy. To produce a good document compatible",
-                "across all Word versions, you need to open the file in Word, go to File>Info>Campatability,",
-                "and convert the resulting document.")
+        print("A FRIENDLY REMINDER: The RTF file is verified to be compatable with Windows OpenOffice Writer V4.1.12 and Microsoft Office 365 Word Version 2204. For compatability with previous versions of Microsoft Word, open the RTF file in a recent Word program and select File>Info>Convert for a document that is compatable across all versions of Word.")
         
 if __name__=="__main__":
     this_proj = spacejock_html_to_shunn("project_config.yml","author_config.yml")

@@ -32,8 +32,8 @@ This process produces a tex file and copies over dependencies to the project dir
 * xcolor
 * soul
 
-### Rish Text Format (rtf) suggestions
-To ensure maximum compatibility, I suggest to open the resulting file in Microsoft Word and select File>Info>Compatibility so that it works across all Microsoft Word office programs
+### Rich Text Format (rtf) suggestions
+The RTF file is verified to be compatable with Windows OpenOffice Writer V4.1.12 and Microsoft Office 365 Word Version 2204. For compatability with previous versions of Microsoft Word, open the RTF file in a recent Word program and select File>Info>Convert for a document that is compatable across all versions of Word.
 
 ### PHP Dependencies
 In order to read the php files, you will need some sort of php compiler. I have only tested this on Apache, but I assume others will work fine.
