@@ -141,7 +141,9 @@ class spacejock_html_to_shunn:
                     # shunnfile.write(para_footer)
                     shunnfile.write(para_header)
                     shunnfile.write(para_footer)
-        
+        shunnfile.write(para_header)
+        shunnfile.write(para_footer)
+        shunnfile.write("{\\pard\\qc [END]\\par}") #test
         shunnfile.write(doc_footer)
         shunnfile.close()
         
