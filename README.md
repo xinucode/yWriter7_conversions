@@ -3,6 +3,8 @@ Converts output html files into php, latex, and rtf outputs.
 
 These scripts take the html file produced by SpaceJock's yWriter7 output html file and converts it to several formats of my preference and needs. 
 
+The software may be used under the terms of the GNU General Public License (GPL).  
+
 ## Dependencies 
 
 SpaceJock's story writing software:
