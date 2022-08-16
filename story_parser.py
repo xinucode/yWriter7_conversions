@@ -6,7 +6,8 @@ bold_indicators = ["<b>","</b>"]
 italics_indicators = ["<i>","</i>"]
 para_indicators = ["<p class='Para'>","</p>"]
 scene_indicator = "<center></center>"
-all_indicators = heading_indicators+bold_indicators+italics_indicators+para_indicators+[scene_indicator]
+im_not_sure_about_this = "<p align='right'>"
+all_indicators = heading_indicators+bold_indicators+italics_indicators+para_indicators+[scene_indicator]+[im_not_sure_about_this]
 
 def strip_indicators( line, indicators ):
     for item in indicators:
@@ -217,6 +218,7 @@ class story_parser:
                 this_scene = 0
             if para_indicators[0] in line:
                 line = strip_indicators( line, para_indicators)
+                line = strip_indicators( line, [im_not_sure_about_this])
                 if "%" in line:
                     line = line.replace( "%", " percent" )
                 self.chapters[this_chapter][this_scene].append(story_paragraph(line))
