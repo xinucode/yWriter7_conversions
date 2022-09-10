@@ -46,8 +46,11 @@ def clean_up_line_latex( line):
   line = line.replace( "&#211;", "$\\acute{\\textup{O}}$")
   line = line.replace( "&mdash;", "---")
   line = line.replace( "&#8212;", "---")
+  line = line.replace( "&lt;", "<")
   line = line.replace( "&gt;", ">")
   line = line.replace( "&#239;", "$\\ddot{\\textup{\\i}}$")
+  #must be done last 
+  line = line.replace( "#", "\\#" )
   return line
     
 class story_text:
