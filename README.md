@@ -21,6 +21,7 @@ These will probably be necessary for running these scripts.
 * pyinstaller
 * tkinter
 * subprocess
+* html
 
 ### Latex Script Dependencies ###
 This process produces a tex file and copies over dependencies to the project directory. The resulting tex file will need to be converted using a latex compiler. This file assumes you have installed the following libraries:
