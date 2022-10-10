@@ -1,3 +1,4 @@
+import html
 
 test_file = "C:\\Users\\sarah\\Documents\\Sarah's Brain\\My Books and Ideas\\dark_stories\\short_stories\\Export\\the_mimic_v1.4.html"
 
@@ -32,25 +33,30 @@ def remove_rear_spaces( sentence ):
         return remove_rear_spaces(sentence[:-1])
         
 def clean_up_line_latex( line):
-  line = line.replace("&hellip;", "...")
-  line = line.replace( "&#8220;", '"')
-  line = line.replace( "&#8221;", '"')
-  line = line.replace( "&#8217; ", "\\textquotesingle \ ")
-  line = line.replace( "&#8216; ", "\\textquotesingle \ ")
-  line = line.replace( "&#8217;", "\\textquotesingle ")
-  line = line.replace( "&#8216;", "\\textquotesingle ")
-  line = line.replace( "&#8230;", "...")
-  line = line.replace( "&#246;", "$\\ddot{\\textup{o}}$")
-  line = line.replace( "&#252;", "$\\ddot{\\textup{u}}$")
-  line = line.replace( "&#228;", "$\\ddot{\\textup{a}}$")
-  line = line.replace( "&#211;", "$\\acute{\\textup{O}}$")
-  line = line.replace( "&mdash;", "---")
-  line = line.replace( "&#8212;", "---")
-  line = line.replace( "&lt;", "<")
-  line = line.replace( "&gt;", ">")
-  line = line.replace( "&#239;", "$\\ddot{\\textup{\\i}}$")
-  #must be done last 
-  line = line.replace( "#", "\\#" )
+#   line = line.replace("&hellip;", "...")
+#   line = line.replace( "&#8220;", '"')
+#   line = line.replace( "&#8221;", '"')
+#   line = line.replace( "&#8217; ", "\\textquotesingle \ ")
+#   line = line.replace( "&#8216; ", "\\textquotesingle \ ")
+#   line = line.replace( "&#8217;", "\\textquotesingle ")
+#   line = line.replace( "&#8216;", "\\textquotesingle ")
+#   line = line.replace( "&#8230;", "...")
+#   line = line.replace( "&#246;", "$\\ddot{\\textup{o}}$")
+#   line = line.replace( "&#252;", "$\\ddot{\\textup{u}}$")
+#   line = line.replace( "&#228;", "$\\ddot{\\textup{a}}$")
+#   line = line.replace( "&#211;", "$\\acute{\\textup{O}}$")
+#   line = line.replace( "&mdash;", "---")
+#   line = line.replace( "&#8212;", "---")
+#   line = line.replace( "&lt;", "<")
+#   line = line.replace( "&gt;", ">")
+#   line = line.replace( "&#239;", "$\\ddot{\\textup{\\i}}$")
+#   #must be done last 
+#   line = line.replace( "#", "\\#" )
+  line = html.unescape(line)
+  line = line.replace( "“", '"' )
+  line = line.replace( "”", '"' )
+  line = line.replace( "’", "'" )
+#   line = line.replace( "’", "'" ) 
   return line
     
 class story_text:
@@ -169,20 +175,22 @@ class story_paragraph:
                 out_text = out_text+text.text
                 
         out_text = out_text.replace( "\n", "" )
-        out_text = out_text.replace( "&#8220;", '"')
-        out_text = out_text.replace( "&#8221;", '"')
-        out_text = out_text.replace( "&#8216;", "'")
-        out_text = out_text.replace( "&#8217;", "'")
-        out_text = out_text.replace( "&#8230;", "…")
-        out_text = out_text.replace( "&#246;", "ö")
-        out_text = out_text.replace( "&#252;", "ü")
-        out_text = out_text.replace( "&#228;", "ä")
-        out_text = out_text.replace( "&#211;", "Ó")
-        out_text = out_text.replace( "&mdash;", "—")
-        out_text = out_text.replace( "&#8212;", "—")
-        out_text = out_text.replace("&hellip;", "…")
-        out_text = out_text.replace( "&gt;", ">")
-        out_text = out_text.replace( "&#239;", "ï")
+#         out_text = out_text.replace( "&#8220;", '"')
+#         out_text = out_text.replace( "&#8221;", '"')
+#         out_text = out_text.replace( "&#8216;", "'")
+#         out_text = out_text.replace( "&#8217;", "'")
+#         out_text = out_text.replace( "&#8230;", "…")
+#         out_text = out_text.replace( "&#246;", "ö")
+#         out_text = out_text.replace( "&#252;", "ü")
+#         out_text = out_text.replace( "&#228;", "ä")
+#         out_text = out_text.replace( "&#211;", "Ó")
+#         out_text = out_text.replace( "&mdash;", "—")
+#         out_text = out_text.replace( "&#8212;", "—")
+#         out_text = out_text.replace("&hellip;", "…")
+#         out_text = out_text.replace( "&gt;", ">")
+#         out_text = out_text.replace( "&#239;", "ï")
+        
+        out_text = html.unescape(out_text)
         
         out_text = remove_front_spaces(out_text)
         out_text = remove_rear_spaces(out_text)
