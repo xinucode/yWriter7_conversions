@@ -2,6 +2,7 @@ import html
 
 test_file = "C:\\Users\\sarah\\Documents\\Sarah's Brain\\My Books and Ideas\\dark_stories\\short_stories\\Export\\the_mimic_v1.4.html"
 
+##spacejock tags
 heading_indicators = ["<p class='chapter'>","</p>"]
 bold_indicators = ["<b>","</b>"]
 italics_indicators = ["<i>","</i>"]
@@ -9,6 +10,13 @@ para_indicators = ["<p class='Para'>","</p>"]
 scene_indicator = "<center></center>"
 im_not_sure_about_this = "<p align='right'>"
 all_indicators = heading_indicators+bold_indicators+italics_indicators+para_indicators+[scene_indicator]+[im_not_sure_about_this]
+
+#xinuwrite tags
+x_header_break = "######"
+x_title_tag = "Title:"
+x_project_tag = "Project:"
+x_date_tag = "Date:"
+
 
 def strip_indicators( line, indicators ):
     for item in indicators:
@@ -218,30 +226,57 @@ class story_paragraph:
         return clean_up_line_latex(out_text)+"\n"
 
 class story_parser:
-    def __init__(self, html_file):
-        f = open(html_file, "r")
-        self.chapters = {}
-        line = f.readline()
-        while line:
-            if heading_indicators[0] in line:
-                this_chapter = strip_indicators( line, all_indicators)
-                self.chapters[this_chapter] = [[]]
-                this_scene = 0
-            if para_indicators[0] in line:
-                line = strip_indicators( line, para_indicators)
-                line = strip_indicators( line, [im_not_sure_about_this])
-                if "%" in line:
-                    line = line.replace( "%", " percent" )
-                self.chapters[this_chapter][this_scene].append(story_paragraph(line))
-            if scene_indicator in line:
-                this_scene = this_scene+1
-                self.chapters[this_chapter].append([])
+    def __init__(self, file, file_type = "html"):
+        if file_type=="html": #spacejock html output
+            f = open(file, "r")
+            self.chapters = {}
             line = f.readline()
-        f.close()
-        
-        clean = False
-        while not clean:
-            clean = self.clean_final_breaks()
+            while line:
+                if heading_indicators[0] in line:
+                    this_chapter = strip_indicators( line, all_indicators)
+                    self.chapters[this_chapter] = [[]]
+                    this_scene = 0
+                if para_indicators[0] in line:
+                    line = strip_indicators( line, para_indicators)
+                    line = strip_indicators( line, [im_not_sure_about_this])
+                    if "%" in line:
+                        line = line.replace( "%", " percent" )
+                    self.chapters[this_chapter][this_scene].append(story_paragraph(line))
+                if scene_indicator in line:
+                    this_scene = this_scene+1
+                    self.chapters[this_chapter].append([])
+                line = f.readline()
+            f.close()
+
+            clean = False
+            while not clean:
+                clean = self.clean_final_breaks()
+        elif file_type=="str": #xinuwrite entry file
+            lines = file.split("\n")
+            lines = [line.strip() for line in lines]
+            title = ""
+            project = ""
+            date = ""
+            header_index = 0
+            for i,line in enumerate(lines):
+                if line.startswith(x_title_tag):
+                    title = line.replace(x_title_tag,"",1).strip()
+                elif line.startswith(x_project_tag):
+                    project = line.replace(x_project_tag,"",1).strip()
+                elif line.startswith(x_date_tag):
+                    date = line.replace(x_date_tag,"",1).strip()
+                elif line==x_header_break:
+                    header_index = i
+            self.chapters = {project:[[]]}
+                          #chap  #scene #first paragraph
+            self.chapters[project][0].append(f"{title} {date}")
+            for line in lines[header_index+1:]:
+                if "%" in line:
+                    self.chapters[project][0].append(story_paragraph(line.replace( "%", " percent" )))
+                else:
+                    self.chapters[project][0].append(story_paragraph(line))
+        else:
+            print("Bad filetype in story_parser")
         
     def clean_final_breaks( self):
         for chap in self.chapters.keys():
