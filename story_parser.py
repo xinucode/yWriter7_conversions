@@ -16,6 +16,7 @@ x_header_break = "######"
 x_title_tag = "Title:"
 x_project_tag = "Project:"
 x_date_tag = "Date:"
+x_wc_tag = "Word Count:"
 
 
 def strip_indicators( line, indicators ):
@@ -257,6 +258,7 @@ class story_parser:
             title = ""
             project = ""
             date = ""
+            word_count = ""
             header_index = 0
             for i,line in enumerate(lines):
                 if line.startswith(x_title_tag):
@@ -265,11 +267,15 @@ class story_parser:
                     project = line.replace(x_project_tag,"",1).strip()
                 elif line.startswith(x_date_tag):
                     date = line.replace(x_date_tag,"",1).strip()
+                elif line.startswith(x_wc_tag):
+                    word_count = line.replace(x_wc_tag,"",1).strip()
                 elif line==x_header_break:
                     header_index = i
             self.chapters = {project:[[]]}
                           #chap  #scene #first paragraph
-            self.chapters[project][0].append(f"{title} {date}")
+            self.chapters[project][0].append(title)
+            self.chapters[project][0].append(date)
+            self.chapters[project][0].append(word_count)
             for line in lines[header_index+1:]:
                 if "%" in line:
                     self.chapters[project][0].append(story_paragraph(line.replace( "%", " percent" )))
