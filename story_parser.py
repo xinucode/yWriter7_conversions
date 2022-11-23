@@ -65,6 +65,7 @@ def clean_up_line_latex( line):
   line = line.replace( "“", '"' )
   line = line.replace( "”", '"' )
   line = line.replace( "’", "'" )
+  line = line.replace( "#", "\\#" )
 #   line = line.replace( "’", "'" ) 
   return line
     
