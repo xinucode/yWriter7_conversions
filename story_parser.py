@@ -65,6 +65,7 @@ def clean_up_line_latex( line):
   line = line.replace( "“", '"' )
   line = line.replace( "”", '"' )
   line = line.replace( "’", "'" )
+  line = line.replace( "#", "\\#" )
 #   line = line.replace( "’", "'" ) 
   return line
     
@@ -200,11 +201,19 @@ class story_paragraph:
 #         out_text = out_text.replace( "&#239;", "ï")
         
         out_text = html.unescape(out_text)
+        out_text = out_text.replace( '”', '"' )
+        out_text = out_text.replace( '“', '"' )
+        old_out_text = out_text
+        out_text = out_text.replace('"', '“', 1)
+        out_text = out_text.replace('"', '”', 1)
+        while old_out_text!=out_text:
+            old_out_text = out_text
+            out_text = out_text.replace('"', '“', 1)
+            out_text = out_text.replace('"', '”', 1)
         
         out_text = remove_front_spaces(out_text)
         out_text = remove_rear_spaces(out_text)
-        # if out_text.strip() == "":
-            # out_text = "\n"
+        
         return out_text
         
     def paragraph_to_tex(self):
@@ -224,7 +233,17 @@ class story_paragraph:
         if "[" in out_text and "]" in out_text:
             out_text = out_text.replace( "[", "\\sethlcolor{red}\\hl{[")
             out_text = out_text.replace( "]", "]}" )
-        return clean_up_line_latex(out_text)+"\n"
+            
+        out_text = clean_up_line_latex(out_text)+"\n"
+        old_out_text = out_text
+        out_text = out_text.replace('"', '“', 1)
+        out_text = out_text.replace('"', '”', 1)
+        while old_out_text!=out_text:
+            old_out_text = out_text
+            out_text = out_text.replace('"', '“', 1)
+            out_text = out_text.replace('"', '”', 1)
+                
+        return out_text
 
 class story_parser:
     def __init__(self, file, file_type = "html"):
@@ -232,9 +251,11 @@ class story_parser:
             f = open(file, "r")
             self.chapters = {}
             line = f.readline()
+            this_chapter = "None"
+            this_scene = 0
             while line:
                 if heading_indicators[0] in line:
-                    this_chapter = strip_indicators( line, all_indicators)
+                    this_chapter = strip_indicators( line, all_indicators) #fix in case of duplicate chapters
                     self.chapters[this_chapter] = [[]]
                     this_scene = 0
                 if para_indicators[0] in line:
@@ -242,9 +263,13 @@ class story_parser:
                     line = strip_indicators( line, [im_not_sure_about_this])
                     if "%" in line:
                         line = line.replace( "%", " percent" )
+                    if this_chapter not in self.chapters.keys():
+                        self.chapters[this_chapter] = [[]]
                     self.chapters[this_chapter][this_scene].append(story_paragraph(line))
                 if scene_indicator in line:
                     this_scene = this_scene+1
+                    if this_chapter not in self.chapters.keys():
+                        self.chapters[this_chapter] = [[]]
                     self.chapters[this_chapter].append([])
                 line = f.readline()
             f.close()
@@ -290,15 +315,15 @@ class story_parser:
                 self.chapters[chap].pop()
         for chap in self.chapters.keys():
             for i,scene in enumerate(self.chapters[chap]):
-                final_para = scene[-1]
-                if len(final_para.contents)==1 and not final_para.contents[0].text.strip():
-                    self.chapters[chap][i].pop()
-                    return False
+                if scene:
+                    final_para = scene[-1]
+                    if len(final_para.contents)==1 and not final_para.contents[0].text.strip():
+                        self.chapters[chap][i].pop()
+                        return False
         return True
     
     def story_preview(self,full = False):
         for chapter in self.chapters.keys():
-            print(chapter)
             for i,scene in enumerate(self.chapters[chapter]):
                 print(f"\tscene {i}")
                 count = len(scene)

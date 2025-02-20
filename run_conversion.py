@@ -4,6 +4,7 @@ import spacejock_html_to_shunn as rtf
 import argparse
 import os
 
+
 #parse arguments
 parser = argparse.ArgumentParser(description="Define conversion types to run.")
 parser.add_argument('-a','--author', type=str, help="path to author config file")
