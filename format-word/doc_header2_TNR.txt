@@ -68,43 +68,41 @@
 \par }}{\*\aftnsepc \ltrpar \pard\plain \ltrpar\ql \li0\ri0\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \rtlch\fcs1 \af0\afs20\alang1025 \ltrch\fcs0 \fs24\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {\rtlch\fcs1 \af0 
 \ltrch\fcs0 \insrsid71645 \chftnsepc 
 \par }}\ltrpar \sectd \ltrsect\psz1\linex0\headery1440\endnhere\titlepg\sectdefaultcl\sectrsid12783063\sftnbj {\headerl \ltrpar \pard\plain \ltrpar\ql \li0\ri0\nowidctlpar\tqr\tx9360\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \rtlch\fcs1 
-\af0\afs20\alang1025 \ltrch\fcs0 \fs24\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7026613 \tab }{\rtlch\fcs1 \af0 \ltrch\fcs0 \f2\insrsid7026613 Author Surname / {\*\bkmkstart 2}{\*\bkmkend 2}Title Keyword / \chpgn 
+\af0\afs20\alang1025 \ltrch\fcs0 \fs24\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7026613 \tab Author Surname / {\*\bkmkstart 2}{\*\bkmkend 2}Title Keyword / \chpgn 
 \par }}{\headerr \ltrpar \pard\plain \ltrpar\s19\qr \li0\ri0\sl-240\slmult0\nowidctlpar\noline
 \tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tqr\tx9360\wrapdefault\hyphpar0\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid2508900\contextualspace \rtlch\fcs1 \af0\afs20\alang1025 \ltrch\fcs0 
-\f2\fs24\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid2508900 Author Surname}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7026613  / }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid2508900 Title Keyword}{\rtlch\fcs1 
-\af0 \ltrch\fcs0 \insrsid7026613  / \chpgn 
+\fs24\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid2508900 Author Surname}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7026613  / }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid2508900 Title Keyword}{\rtlch\fcs1 \af0 \ltrch\fcs0 
+\insrsid7026613  / \chpgn 
+\par }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7108522 
 \par }}{\footerl \ltrpar \pard\plain \ltrpar\ql \li0\ri0\nowidctlpar
 \tx-1440\tx-720\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tx9360\tx10080\tx10800\tx11520\tx12240\tx12960\tx13680\tx14400\tx15120\tx15840\tx16560\tx17280\tx18000\tx18720
 \wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \rtlch\fcs1 \af0\afs20\alang1025 \ltrch\fcs0 \fs24\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7026613 
 \par }}{\footerr \ltrpar \pard\plain \ltrpar\ql \li0\ri0\sl0\slmult0\nowidctlpar
 \tx-1440\tx-720\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\tx9360\tx10080\tx10800\tx11520\tx12240\tx12960\tx13680\tx14400\tx15120\tx15840\tx16560\tx17280\tx18000\tx18720
 \wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \rtlch\fcs1 \af0\afs20\alang1025 \ltrch\fcs0 \fs24\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7026613 
+\par }}{\headerf \ltrpar \pard\plain \ltrpar\s16\ql \li0\ri0\sl-240\slmult0\nowidctlpar\noline\tqr\tx9360\wrapdefault\hyphpar0\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid9661733\contextualspace \rtlch\fcs1 \af0\afs20\alang1025 \ltrch\fcs0 
+\fs24\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid9661733 Author Name\tab about #666 words}{\rtlch\fcs1 \af0 \ltrch\fcs0 \b\lang1024\langfe1024\noproof\insrsid9661733\charrsid11666971 
+\par }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid9661733 Street Address
+\par City and Postal Code
+\par Email Address
+\par }\pard\plain \ltrpar\s24\ql \li0\ri0\widctlpar\tqc\tx4680\tqr\tx9360\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \rtlch\fcs1 \af0\afs20\alang1025 \ltrch\fcs0 \fs24\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {\rtlch\fcs1 \af0 
+\ltrch\fcs0 \insrsid9661733 
 \par }}{\*\pnseclvl1\pnucrm\pnstart1\pnindent720\pnhang {\pntxta .}}{\*\pnseclvl2\pnucltr\pnstart1\pnindent720\pnhang {\pntxta .}}{\*\pnseclvl3\pndec\pnstart1\pnindent720\pnhang {\pntxta .}}{\*\pnseclvl4\pnlcltr\pnstart1\pnindent720\pnhang {\pntxta )}}
 {\*\pnseclvl5\pndec\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}{\*\pnseclvl6\pnlcltr\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}{\*\pnseclvl7\pnlcrm\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}{\*\pnseclvl8
-\pnlcltr\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}{\*\pnseclvl9\pnlcrm\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}\pard\plain \ltrpar\s16\ql \li0\ri0\sl-240\slmult0\nowidctlpar\noline
-\tqr\tx9360\wrapdefault\hyphpar0\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid1206925\contextualspace \rtlch\fcs1 \af0\afs20\alang1025 \ltrch\fcs0 \f2\fs24\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {\field{\*\fldinst {\rtlch\fcs1 
-\af0 \ltrch\fcs0 \insrsid7026613  SEQ CHAPTER \\h \\r 1}}{\fldrslt }}\sectd \ltrsect\psz1\linex0\headery1440\endnhere\titlepg\sectdefaultcl\sectrsid12783063\sftnbj {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid2911754 Author Name}{\rtlch\fcs1 \af0 
-\ltrch\fcs0 \insrsid14626007 \tab about #666 words}{\rtlch\fcs1 \af0 \ltrch\fcs0 \b\lang1024\langfe1024\noproof\insrsid7026613\charrsid11666971 
-\par }\pard \ltrpar\s16\ql \li0\ri0\sl-240\slmult0\nowidctlpar\noline\tqr\tx9360\wrapdefault\hyphpar0\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid13776568\contextualspace {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid2911754 Street Address}{
-\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7026613 
-\par }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid2911754 City and Postal Code}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7026613 
-\par }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid2911754 Email Address}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid13776568 
-\par }\pard\plain \ltrpar\s15\ql \li0\ri0\sl-480\slmult0\nowidctlpar\noline
-\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\wrapdefault\hyphpar0\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid13776568\contextualspace \rtlch\fcs1 \af0\afs20\alang1025 \ltrch\fcs0 
-\f2\fs24\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid13776568 
+\pnlcltr\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}{\*\pnseclvl9\pnlcrm\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}\pard\plain \ltrpar\s15\ql \li0\ri0\sl480\slmult1\nowidctlpar\noline
+\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\wrapdefault\hyphpar0\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid3499815\contextualspace \rtlch\fcs1 \af0\afs20\alang1025 \ltrch\fcs0 
+\fs24\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid13776568 
 \par }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7026613 
 \par 
 \par 
 \par 
 \par 
 \par 
-\par 
-\par 
-\par }\pard\plain \ltrpar\s17\qc \li0\ri0\sl-480\slmult0\nowidctlpar\noline
-\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\wrapdefault\hyphpar0\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid13776568\contextualspace \rtlch\fcs1 \af0\afs20\alang1025 \ltrch\fcs0 
-\f2\fs24\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid2911754 {\*\bkmkstart 1}{\*\bkmkend 1}Story Title}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7026613 
-\par }\pard\plain \ltrpar\s18\qc \li0\ri0\sa480\sl-480\slmult0\nowidctlpar\noline\wrapdefault\hyphpar0\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid13776568\contextualspace \rtlch\fcs1 \af0\afs20\alang1025 \ltrch\fcs0 
-\f2\fs24\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7026613 by }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid2911754 Author Byline}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7026613 
-\par }\pard\plain \ltrpar\s15\ql \li0\ri0\sl-480\slmult0\nowidctlpar\noline
-\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\wrapdefault\hyphpar0\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid1508501\contextualspace \rtlch\fcs1 \af0\afs20\alang1025 \ltrch\fcs0 
-\f2\fs24\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 
+\par }\pard\plain \ltrpar\s17\qc \li0\ri0\sl480\slmult1\nowidctlpar\noline
+\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\wrapdefault\hyphpar0\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid2560017\contextualspace \rtlch\fcs1 \af0\afs20\alang1025 \ltrch\fcs0 
+\fs24\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid2911754 {\*\bkmkstart 1}{\*\bkmkend 1}Story Title}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7026613 
+\par }\pard\plain \ltrpar\s18\qc \li0\ri0\sa480\sl480\slmult1\nowidctlpar\noline\wrapdefault\hyphpar0\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid2560017\contextualspace \rtlch\fcs1 \af0\afs20\alang1025 \ltrch\fcs0 
+\fs24\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 {\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7026613 by }{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid2911754 Author Byline}{\rtlch\fcs1 \af0 \ltrch\fcs0 \insrsid7026613 
+\par }\pard\plain \ltrpar\s15\ql \fi720\li0\ri0\sl480\slmult1\nowidctlpar\noline
+\tx0\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\wrapdefault\hyphpar0\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid2560017\contextualspace \rtlch\fcs1 \af0\afs20\alang1025 \ltrch\fcs0 
+\fs24\lang1033\langfe1033\cgrid\langnp1033\langfenp1033 

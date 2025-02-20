@@ -24,7 +24,15 @@ center_command = "\\pard \\ltrpar\\s15\\qc \\fi720\\li0\\ri0\\sl-480\\slmult0\\n
 
 
 class spacejock_html_to_shunn:
-    def __init__(self,proj_file,auth_file):
+    def __init__(self,proj_file = "",auth_file = ""):
+        
+#         self.author = "Author Name"
+#         self.street_address = "Street Adress Line 1"
+#         self.postal_code = "Street Adress Line 2"
+#         self.email = "author.email@email.com"
+#         self.author_surname = "Author Surname"
+        
+#         if auth_file:
         try:
             yamlfile = open(auth_file,"r")
             author_info = yaml.load(yamlfile, Loader=yaml.FullLoader)
@@ -38,6 +46,15 @@ class spacejock_html_to_shunn:
         finally:
             yamlfile.close()
 
+#         self.infiledir = ""
+#         self.file_stub = "this_project"
+#         self.title = "A Title"
+#         self.chapters = True
+#         self.word_count = "10"
+#         self.book_type = "story"
+#         self.title_keyword = "Title Keyword"
+        
+#         if proj_file:
         try:
             yamlfile = open(proj_file,"r")
             project_info = yaml.load(yamlfile, Loader=yaml.FullLoader)
@@ -134,16 +151,14 @@ class spacejock_html_to_shunn:
                     shunnfile.write(para.paragraph_to_rtf())
                     shunnfile.write(para_footer)
                 if i<final_scene:
-                    shunnfile.write(para_header)
-                    shunnfile.write(para_footer)
                     # shunnfile.write(para_header)
-                    shunnfile.write("{\\pard\\qc #\\par}")
                     # shunnfile.write(para_footer)
-                    shunnfile.write(para_header)
-                    shunnfile.write(para_footer)
-        shunnfile.write(para_header)
-        shunnfile.write(para_footer)
-        shunnfile.write("{\\pard\\qc [END]\\par}") #test
+                    shunnfile.write("{\\pard\\qc \\sl480\\slmult1 #\\par}")
+                    # shunnfile.write(para_header)
+                    # shunnfile.write(para_footer)
+        # shunnfile.write(para_header)
+        # shunnfile.write(para_footer)
+        # shunnfile.write("{\\pard\\qc [END]\\par}") #test
         shunnfile.write(doc_footer)
         shunnfile.close()
         

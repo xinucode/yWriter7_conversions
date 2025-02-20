@@ -41,8 +41,11 @@ class spacejock_html_to_latex:
         finally:
             yamlfile.close()
         
-        self.story_contents = sp.story_parser( self.html_filename )
-        # self.story_contents.story_preview()
+        try:
+            self.story_contents = sp.story_parser( self.html_filename )
+        except Exception as err:
+            print("ERROR: Story parser failed:",err)
+        self.story_contents.story_preview()
         
     @property
     def html_filename(self):

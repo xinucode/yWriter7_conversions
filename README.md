@@ -11,17 +11,12 @@ http://www.spacejock.com/yWriter.html
 ### Python Script Dependencies
 These will probably be necessary for running these scripts.
 
-* sys
-* os
-* yaml
-* time
-* shutil
+* pyyaml
 * pylatex (only latex conversions)
 * argparse
 * pyinstaller
-* tkinter
+* tk
 * subprocess
-* html
 
 ### Latex Script Dependencies ###
 This process produces a tex file and copies over dependencies to the project directory. The resulting tex file will need to be converted using a latex compiler. This file assumes you have installed the following libraries:
